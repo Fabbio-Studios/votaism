@@ -131,3 +131,4 @@ export function buildTsePhotoUrl(
   // https://resultados.tse.jus.br/oficial/<ciclo>/<cd_eleicao>/fotos/<uf>/<sqcand>.jpeg
   return `${base}/oficial/${office.cycle}/${office.electionCode}/fotos/${state.toLowerCase()}/${sqcand}.jpeg`;
 }
+

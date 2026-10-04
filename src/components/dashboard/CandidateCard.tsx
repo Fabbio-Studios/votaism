@@ -153,3 +153,4 @@ export function CandidateCard({ candidate, maxVotes = 1 }: CandidateCardProps) {
     </article>
   );
 }
+

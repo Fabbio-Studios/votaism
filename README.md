@@ -199,3 +199,4 @@ Desenvolvido por **Fábio Gutemberg**, CEO da **Calangos Marketing**.
 * Instagram: [Calangos Marketing](https://instagram.com/calangosmarketing)
 
 © 2026 VOTAÍ SM • Resultados Eleitorais de Santa Maria/RN
+

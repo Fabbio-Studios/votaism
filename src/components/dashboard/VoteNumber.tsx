@@ -75,3 +75,4 @@ export function VoteNumber({ value, className = "" }: VoteNumberProps) {
     </span>
   );
 }
+

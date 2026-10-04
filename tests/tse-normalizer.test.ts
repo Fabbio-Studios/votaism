@@ -30,3 +30,4 @@ describe("TSE Normalizer Suite", () => {
     expect(normalized.office.slug).toBe("governador");
   });
 });
+

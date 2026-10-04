@@ -117,3 +117,4 @@ export function TurnoutCard({ votingDetails, counting }: TurnoutCardProps) {
     </div>
   );
 }
+

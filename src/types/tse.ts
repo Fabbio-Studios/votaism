@@ -241,3 +241,4 @@ export interface ElectionResultsResponse {
   totalCandidates: number;
   isStale?: boolean;
 }
+

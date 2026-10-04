@@ -78,3 +78,4 @@ export function BottomNavigation({ onRefresh, isRefreshing = false }: BottomNavi
     </nav>
   );
 }
+

@@ -55,3 +55,4 @@ export function createSecureJsonResponse<T>(data: T, status: number = 200): Next
 
   return response;
 }
+

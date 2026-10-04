@@ -23,7 +23,7 @@ export function Footer() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href={INSTAGRAM_URL}
+              href="https://calangos-marketing.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-brand-dark bg-brand-light hover:bg-brand-primary hover:text-white transition-all duration-200 active:scale-95 shadow-sm"
@@ -83,4 +83,3 @@ export function Footer() {
     </footer>
   );
 }
-

@@ -5,13 +5,13 @@ import Image from "next/image";
 import { NormalizedCandidate } from "@/types/tse";
 import { VoteNumber } from "./VoteNumber";
 import { MaterialIcon } from "@/components/ui/MaterialIcon";
+import { formatBrPercentage } from "@/lib/tse/parser";
 
 interface CandidateCardProps {
   candidate: NormalizedCandidate;
-  maxVotes?: number; // Para calcular a barra de progresso relativa ou absoluta
 }
 
-export function CandidateCard({ candidate, maxVotes = 1 }: CandidateCardProps) {
+function CandidateCardComponent({ candidate }: CandidateCardProps) {
   const [photoError, setPhotoError] = useState(false);
 
   // Formata a posição com zero à esquerda (01, 02, etc.)
@@ -122,7 +122,10 @@ export function CandidateCard({ candidate, maxVotes = 1 }: CandidateCardProps) {
             {/* Destaque de Percentual (Hierarquia Tipográfica Inter) */}
             <div className="text-right shrink-0">
               <div className="font-data text-xl sm:text-2xl font-extrabold text-brand-dark tracking-tight">
-                {candidate.formattedPercentage}
+                <VoteNumber
+                  value={candidate.percentage}
+                  formatValue={formatBrPercentage}
+                />
               </div>
               <div className="text-xs text-stone-500 font-data font-medium mt-0.5">
                 <VoteNumber value={candidate.votes} /> votos
@@ -154,3 +157,30 @@ export function CandidateCard({ candidate, maxVotes = 1 }: CandidateCardProps) {
   );
 }
 
+function areCandidatesVisuallyEqual(
+  previous: NormalizedCandidate,
+  next: NormalizedCandidate
+) {
+  return (
+    previous.position === next.position &&
+    previous.name === next.name &&
+    previous.number === next.number &&
+    previous.photoUrl === next.photoUrl &&
+    previous.isElected === next.isElected &&
+    previous.status === next.status &&
+    previous.party === next.party &&
+    previous.coalition === next.coalition &&
+    previous.formattedVotes === next.formattedVotes &&
+    previous.votes === next.votes &&
+    previous.formattedPercentage === next.formattedPercentage &&
+    previous.percentage === next.percentage &&
+    previous.vice?.name === next.vice?.name &&
+    previous.vice?.party === next.vice?.party
+  );
+}
+
+export const CandidateCard = React.memo(
+  CandidateCardComponent,
+  (previous, next) =>
+    areCandidatesVisuallyEqual(previous.candidate, next.candidate)
+);

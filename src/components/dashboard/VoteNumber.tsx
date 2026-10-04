@@ -6,27 +6,37 @@ import { formatBrNumber } from "@/lib/tse/parser";
 interface VoteNumberProps {
   value: number;
   className?: string;
+  formatValue?: (value: number) => string;
 }
 
 /**
  * Exibe o número de votos com microinteração suave quando o valor se altera.
  * Respeita preferências de redução de movimento (prefers-reduced-motion).
  */
-export function VoteNumber({ value, className = "" }: VoteNumberProps) {
+export function VoteNumber({
+  value,
+  className = "",
+  formatValue = formatBrNumber,
+}: VoteNumberProps) {
   const [displayValue, setDisplayValue] = useState<number>(value);
   const [isHighlighting, setIsHighlighting] = useState(false);
   const prevValueRef = useRef<number>(value);
+  const displayValueRef = useRef<number>(value);
 
   useEffect(() => {
     if (prevValueRef.current !== value) {
+      const start = displayValueRef.current;
+      prevValueRef.current = value;
+
       // Verifica se o usuário prefere redução de movimento
       const prefersReducedMotion =
         typeof window !== "undefined" &&
         window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
       if (prefersReducedMotion) {
+        setIsHighlighting(false);
+        displayValueRef.current = value;
         setDisplayValue(value);
-        prevValueRef.current = value;
         return;
       }
 
@@ -34,45 +44,46 @@ export function VoteNumber({ value, className = "" }: VoteNumberProps) {
       setIsHighlighting(true);
       const timer = setTimeout(() => {
         setIsHighlighting(false);
-      }, 900);
+      }, 300);
 
       // Animação de contagem suave (600ms)
-      const start = prevValueRef.current;
-      const end = value;
       const duration = 600;
       const startTime = performance.now();
+      let animationFrame = 0;
 
       const animate = (currentTime: number) => {
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / duration, 1);
         // Easing suave (easeOutCubic)
         const ease = 1 - Math.pow(1 - progress, 3);
-        const current = Math.round(start + (end - start) * ease);
+        const current = Math.round(start + (value - start) * ease);
 
+        displayValueRef.current = current;
         setDisplayValue(current);
 
         if (progress < 1) {
-          requestAnimationFrame(animate);
+          animationFrame = requestAnimationFrame(animate);
         } else {
-          setDisplayValue(end);
-          prevValueRef.current = end;
+          setDisplayValue(value);
         }
       };
 
-      requestAnimationFrame(animate);
+      animationFrame = requestAnimationFrame(animate);
 
-      return () => clearTimeout(timer);
+      return () => {
+        clearTimeout(timer);
+        cancelAnimationFrame(animationFrame);
+      };
     }
   }, [value]);
 
   return (
     <span
-      className={`transition-colors duration-300 ${
+      className={`inline-block transition-[color,transform] duration-300 ${
         isHighlighting ? "text-brand-primary font-bold scale-[1.02]" : ""
       } ${className}`}
     >
-      {formatBrNumber(displayValue)}
+      {formatValue(displayValue)}
     </span>
   );
 }
-

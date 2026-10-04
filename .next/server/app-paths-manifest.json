@@ -1,9 +1,5 @@
 {
   "/api/results/[office]/route": "app/api/results/[office]/route.js",
-  "/api/results/route": "app/api/results/route.js",
-  "/api/status/route": "app/api/status/route.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/resultados/[office]/page": "app/resultados/[office]/page.js",
   "/page": "app/page.js",
   "/sobre/page": "app/sobre/page.js"
 }

@@ -1,0 +1,171 @@
+{
+  "ele": "6257",
+  "t": "1",
+  "f": "o",
+  "sup": "n",
+  "tpabr": "mu",
+  "cdabr": "16241",
+  "dg": "04/10/2026",
+  "hg": "18:45:10",
+  "idg": "1032622",
+  "dt": "04/10/2026",
+  "ht": "18:45:00",
+  "dv": "s",
+  "tf": "n",
+  "and": "s",
+  "s": "18",
+  "st": "15",
+  "pst": "83,33",
+  "e": "4890",
+  "c": "4120",
+  "pc": "84,25",
+  "a": "770",
+  "pa": "15,75",
+  "tv": "4120",
+  "vvc": "3950",
+  "pvvc": "95,87",
+  "vb": "70",
+  "pvb": "1,70",
+  "tvn": "100",
+  "ptvn": "2,43",
+  "carg": [
+    {
+      "cd": "1",
+      "nmn": "Presidente",
+      "nmm": "Presidente",
+      "nmf": "Presidente",
+      "nv": "1",
+      "s": "18",
+      "st": "15",
+      "pst": "83,33",
+      "vvc": "3950",
+      "pvvc": "95,87",
+      "vb": "70",
+      "pvb": "1,70",
+      "tvn": "100",
+      "ptvn": "2,43",
+      "agr": [
+        {
+          "n": "280001800617",
+          "nm": "BRASIL DA ESPERANÇA",
+          "tp": "c",
+          "com": "PT / PC do B / PV",
+          "tvtn": "2450",
+          "tvan": "2450",
+          "par": [
+            {
+              "n": "13",
+              "sg": "PT",
+              "nm": "Partido dos Trabalhadores",
+              "tvtn": "2450",
+              "tvan": "2450",
+              "cand": [
+                {
+                  "n": "13",
+                  "sqcand": "280002542548",
+                  "nm": "LUIZ INACIO LULA DA SILVA",
+                  "nmu": "LULA",
+                  "dt": "27/10/1945",
+                  "seq": "1",
+                  "e": "n",
+                  "st": "Em apuração",
+                  "vap": "2450",
+                  "pvap": "62,03",
+                  "vs": [
+                    {
+                      "tp": "v",
+                      "sqcand": "280002542549",
+                      "nm": "GERALDO ALCKMIN",
+                      "nmu": "GERALDO ALCKMIN",
+                      "sgp": "PSB"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "n": "280001801177",
+          "nm": "PARTIDO LIBERAL",
+          "tp": "i",
+          "com": "PL",
+          "tvtn": "1200",
+          "tvan": "1200",
+          "par": [
+            {
+              "n": "22",
+              "sg": "PL",
+              "nm": "Partido Liberal",
+              "tvtn": "1200",
+              "tvan": "1200",
+              "cand": [
+                {
+                  "n": "22",
+                  "sqcand": "280002551544",
+                  "nm": "FLAVIO NANTES BOLSONARO",
+                  "nmu": "FLAVIO BOLSONARO",
+                  "dt": "30/04/1981",
+                  "seq": "2",
+                  "e": "n",
+                  "st": "Em apuração",
+                  "vap": "1200",
+                  "pvap": "30,38",
+                  "vs": [
+                    {
+                      "tp": "v",
+                      "sqcand": "280002551543",
+                      "nm": "ALFREDO GASPAR DE MENDONÇA NETO",
+                      "nmu": "ALFREDO GASPAR",
+                      "sgp": "PL"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "n": "280001801222",
+          "nm": "PARTIDO SOCIAL DEMOCRÁTICO",
+          "tp": "i",
+          "com": "PSD",
+          "tvtn": "300",
+          "tvan": "300",
+          "par": [
+            {
+              "n": "55",
+              "sg": "PSD",
+              "nm": "Partido Social Democrático",
+              "tvtn": "300",
+              "tvan": "300",
+              "cand": [
+                {
+                  "n": "55",
+                  "sqcand": "280002551932",
+                  "nm": "RONALDO RAMOS CAIADO",
+                  "nmu": "RONALDO CAIADO",
+                  "dt": "25/09/1949",
+                  "seq": "3",
+                  "e": "n",
+                  "st": "Em apuração",
+                  "vap": "300",
+                  "pvap": "7,59",
+                  "vs": [
+                    {
+                      "tp": "v",
+                      "sqcand": "280002551933",
+                      "nm": "GILBERTO KASSAB",
+                      "nmu": "GILBERTO KASSAB",
+                      "sgp": "PSD"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

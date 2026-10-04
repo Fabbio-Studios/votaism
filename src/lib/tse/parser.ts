@@ -192,9 +192,13 @@ export function parseTseUrnaData(
                 };
               }
 
-              // Constrói URL oficial da foto no TSE se sqcand existir
+              // Fotos de candidatos à Presidência ficam na pasta nacional do TSE.
+              const photoState =
+                officeConfig.slug === "presidente"
+                  ? "br"
+                  : SANTA_MARIA_INFO.state.toLowerCase();
               const photoUrl = cand.sqcand
-                ? buildTsePhotoUrl(officeConfig, cand.sqcand, "rn")
+                ? buildTsePhotoUrl(officeConfig, cand.sqcand, photoState)
                 : undefined;
 
               candidates.push({
@@ -250,4 +254,3 @@ export function parseTseUrnaData(
     isSantaMariaConfirmed,
   };
 }
-

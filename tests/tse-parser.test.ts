@@ -67,6 +67,9 @@ describe("TSE Parser & Calculation Suite", () => {
     expect(result.candidates[0].name).toBe("LULA");
     expect(result.candidates[0].votes).toBe(2450);
     expect(result.candidates[0].percentage).toBeCloseTo(62.03);
+    expect(result.candidates[0].photoUrl).toMatch(
+      /\/fotos\/br\/280002542548\.jpeg$/
+    );
 
     // 2º colocado: 1200 votos
     expect(result.candidates[1].position).toBe(2);
@@ -88,4 +91,3 @@ describe("TSE Parser & Calculation Suite", () => {
     );
   });
 });
-

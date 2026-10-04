@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.png",
   },
 };
 
@@ -72,4 +72,3 @@ export default function RootLayout({
     </html>
   );
 }
-
